@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const Fruit = require('./models/fruits.js')
 const PORT = process.env.PORT || 3000
 
+
 //MUST BE FIRST 
 //middleware
 app.use((req, res, next)=>{
