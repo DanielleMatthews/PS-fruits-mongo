@@ -6,10 +6,10 @@ class Show extends React.Component {
     return (
       <div>
         <h1>Fruits Show Page</h1>
-        The {fruit.name} is {fruit.color}
-        {fruit.readyToEat ? ' Its ready to eat' : 'It is not ready to eat...Cant touch this'}
+        The {fruit.name} is {fruit.color}.
+        {fruit.readyToEat ? ' Its ready to eat!!' : ' It is not ready to eat...so no touchy!'}
       </div>
-    );
+    )
   }
 }
 

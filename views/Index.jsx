@@ -6,27 +6,21 @@ class Index extends React.Component {
       <div>
         <h1>Fruits index page</h1>
         <ul>
-          {
-            this.props.fruits.map((fruit, i)=>{
-              return(
+          {this.props.fruits.map((fruit, i)=>{
+            return(
               <li>
-                The <a href={`/fruits/${fruit.id}`}> 
-                {fruit.name}</a>
-
-                 {`is `} { fruit.color}
-                
-                {fruit.readyToEat ? ` It is ready to eat` : `It is not ready to eat`}
+                The <a href={`/fruits/${fruit.id}`}> {fruit.name}</a>
+                {` is `} { fruit.color}.
+                {fruit.readyToEat ? ` It is ready to eat` : ` It is not ready to eat, so no touchy`}
               </li>
-              )
-            })
-          }
+            )}
+          )}
         </ul>
         <nav>
           <a href='/fruits/new'>Create a new fruit</a>
         </nav>
       </div>
     )
-   
   }
 }
 module.exports = Index

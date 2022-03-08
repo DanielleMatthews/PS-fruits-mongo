@@ -5,11 +5,10 @@ const fruits = require('./models/fruits.js')
 const mongoose = require('mongoose')
 const Fruit = require('./models/fruits.js')
 
-
 //MUST BE FIRST 
 //middleware
 app.use((req, res, next)=>{
-  console.log('I run for all routes')
+  // console.log('I run for all routes')
   next()
 })
 //keep this near the top 
@@ -19,6 +18,27 @@ app.use(express.urlencoded({extened:false}))
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
+// app.get('/fruits/seed', (req, res)=>{
+//   Fruit.create([
+//       {
+//           name:'grapefruit',
+//           color:'pink',
+//           readyToEat:true
+//       },
+//       {
+//           name:'grape',
+//           color:'purple',
+//           readyToEat:false
+//       },
+//       {
+//           name:'avocado',
+//           color:'green',
+//           readyToEat:true
+//       }
+//   ], (err, data)=>{
+//       res.redirect('/fruits');
+//   })
+// })
 
 //index route : Show ALL 
 app.get('/fruits', function (req, res) {
@@ -57,7 +77,6 @@ app.post('/fruits/', (req, res)=>{
   console.log(fruits)
   console.log(req.body)
   
-
   // res.redirect('/fruits') //send the user back to /fruits
 })
 
