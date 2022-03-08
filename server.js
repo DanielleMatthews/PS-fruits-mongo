@@ -4,6 +4,7 @@ const app = express()
 const fruits = require('./models/fruits.js')
 const mongoose = require('mongoose')
 const Fruit = require('./models/fruits.js')
+const PORT = process.env.PORT || 3000
 
 //MUST BE FIRST 
 //middleware
@@ -87,6 +88,6 @@ mongoose.connection.once('open', ()=> {
 })
 
 
-app.listen(3000, () => {
-  console.log("listening")
+app.listen(PORT, () => {
+  console.log('listening')
 })
