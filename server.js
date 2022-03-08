@@ -13,7 +13,7 @@ app.use((req, res, next)=>{
   next()
 })
 //keep this near the top 
-app.use(express.urlencoded({extened:false}))
+app.use(express.urlencoded({extened:true}))
 
 //set up view engine above routes
 app.set('view engine', 'jsx')
