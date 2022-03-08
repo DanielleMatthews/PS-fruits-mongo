@@ -12,6 +12,7 @@ app.use((req, res, next)=>{
   // console.log('I run for all routes')
   next()
 })
+
 //keep this near the top 
 app.use(express.urlencoded({extened:true}))
 
