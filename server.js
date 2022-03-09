@@ -75,17 +75,15 @@ app.post('/fruits/', (req, res)=>{
     req.body.readyToEat = false
   }
   Fruit.create(req.body, (error, createdFruit)=>{
-    res.redirect('/fruits')
+    res.redirect('/fruits') //send the user back to /fruits
   })
   
   console.log(fruits)
   console.log(req.body)
-  
-  // res.redirect('/fruits') //send the user back to /fruits
 })
 
 //connect to mongo database
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo')
 })
